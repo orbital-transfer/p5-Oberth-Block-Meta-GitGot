@@ -20,7 +20,7 @@ has data => (
 );
 
 lazy repo_tags => method() {
-	split ' ', $self->data->{tags};
+	[ split ' ', $self->data->{tags} // '' ];
 };
 
 
