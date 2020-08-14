@@ -1,9 +1,9 @@
 use Modern::Perl;
-package Oberth::Block::Meta::GitGot::Repo;
+package Orbital::Payload::Meta::GitGot::Repo;
 # ABSTRACT: GitGot repo
 
 use Mu;
-use Oberth::Manoeuvre::Common::Setup;
+use Orbital::Transfer::Common::Setup;
 
 use MooX::HandlesVia;
 

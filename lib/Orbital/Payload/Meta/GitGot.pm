@@ -1,14 +1,14 @@
 use Modern::Perl;
-package Oberth::Block::Meta::GitGot;
+package Orbital::Payload::Meta::GitGot;
 
 use Mu;
-use Oberth::Manoeuvre::Common::Setup;
+use Orbital::Transfer::Common::Setup;
 
 use YAML::XS;
 use Path::Tiny;
 use Try::Tiny;
 
-use Oberth::Block::Meta::GitGot::Repo;
+use Orbital::Payload::Meta::GitGot::Repo;
 
 has gitgot_config_path => (
 	is => 'ro',
@@ -23,7 +23,7 @@ lazy _gitgot => method() {
 lazy data => method() {
 	my @data;
 	for my $repo ( @{ $self->_gitgot } ) {
-		push @data, Oberth::Block::Meta::GitGot::Repo->new( data => $repo );
+		push @data, Orbital::Payload::Meta::GitGot::Repo->new( data => $repo );
 	};
 
 	\@data;

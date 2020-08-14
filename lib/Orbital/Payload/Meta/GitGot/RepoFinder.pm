@@ -1,17 +1,17 @@
-use Oberth::Manoeuvre::Common::Setup;
-package Oberth::Block::Meta::GitGot::RepoFinder;
+use Orbital::Transfer::Common::Setup;
+package Orbital::Payload::Meta::GitGot::RepoFinder;
 # ABSTRACT: RepoFinder strategy that uses GitGot
 
 use Modern::Perl;
 use Mu;
-use Oberth::Block::Meta::GitGot;
-use Oberth::Block::Service::GitHub::Repo;
+use Orbital::Payload::Meta::GitGot;
+use Orbital::Payload::Service::GitHub::Repo;
 use Try::Tiny;
 
 has gitgot => (
 	is => 'ro',
 	default => method() {
-		my $gitgot = Oberth::Block::Meta::GitGot->new;
+		my $gitgot = Orbital::Payload::Meta::GitGot->new;
 	},
 );
 
@@ -21,7 +21,7 @@ lazy _gitgot_github => method() {
 			die unless defined $_->repo_url;
 			+{
 				gitgot => $_,
-				github_repo => Oberth::Block::Service::GitHub::Repo->new(
+				github_repo => Orbital::Payload::Service::GitHub::Repo->new(
 					uri => $_->repo_url,
 				),
 			}
