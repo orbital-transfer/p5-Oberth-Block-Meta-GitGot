@@ -5,7 +5,7 @@ package Orbital::Payload::Meta::GitGot::RepoFinder;
 use Modern::Perl;
 use Mu;
 use Orbital::Payload::Meta::GitGot;
-use Orbital::Payload::Service::GitHub::Repo;
+use Orbital::Payload::Serv::GitHub::Repo;
 use Try::Tiny;
 
 has gitgot => (
@@ -21,7 +21,7 @@ lazy _gitgot_github => method() {
 			die unless defined $_->repo_url;
 			+{
 				gitgot => $_,
-				github_repo => Orbital::Payload::Service::GitHub::Repo->new(
+				github_repo => Orbital::Payload::Serv::GitHub::Repo->new(
 					uri => $_->repo_url,
 				),
 			}
