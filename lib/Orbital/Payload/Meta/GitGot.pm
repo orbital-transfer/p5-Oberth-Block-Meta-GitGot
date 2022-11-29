@@ -1,8 +1,8 @@
-use Modern::Perl;
+use Orbital::Transfer::Common::Setup;
 package Orbital::Payload::Meta::GitGot;
+# ABSTRACT: Process data from App::GitGot
 
 use Mu;
-use Orbital::Transfer::Common::Setup;
 
 use YAML::XS;
 use Path::Tiny;

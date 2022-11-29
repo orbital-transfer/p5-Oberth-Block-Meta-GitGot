@@ -1,9 +1,8 @@
-use Modern::Perl;
+use Orbital::Transfer::Common::Setup;
 package Orbital::Payload::Meta::GitGot::Repo;
 # ABSTRACT: GitGot repo
 
 use Mu;
-use Orbital::Transfer::Common::Setup;
 
 use MooX::HandlesVia;
 

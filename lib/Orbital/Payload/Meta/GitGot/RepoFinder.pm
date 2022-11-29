@@ -2,7 +2,6 @@ use Orbital::Transfer::Common::Setup;
 package Orbital::Payload::Meta::GitGot::RepoFinder;
 # ABSTRACT: RepoFinder strategy that uses GitGot
 
-use Modern::Perl;
 use Mu;
 use Orbital::Payload::Meta::GitGot;
 use Orbital::Payload::Serv::GitHub::Repo;
