@@ -5,7 +5,7 @@ package Orbital::Payload::Meta::GitGot::Repo;
 use Orbital::Transfer::Common::Setup;
 use Mu;
 
-use MooX::HandlesVia;
+use Sub::HandlesVia;
 
 has data => (
 	is => 'ro',
