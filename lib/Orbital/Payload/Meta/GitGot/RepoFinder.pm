@@ -16,7 +16,7 @@ has gitgot => (
 
 lazy _gitgot_github => method() {
 	my @gitgot_github = map {
-		try {
+		try_tt {
 			die unless defined $_->repo_url;
 			+{
 				gitgot => $_,
@@ -24,7 +24,7 @@ lazy _gitgot_github => method() {
 					uri => $_->repo_url,
 				),
 			}
-		} catch {
+		} catch_tt {
 			();
 		};
 	} @{ $self->gitgot->data };
@@ -35,10 +35,10 @@ lazy _gitgot_github => method() {
 lazy _git_scp_to_path => method() {
 	+{
 		map {
-			try {
+			try_tt {
 				$_->{github_repo}->git_scp_uri
 					=> $_->{gitgot}->repo_path
-			} catch {
+			} catch_tt {
 				()
 			};
 		} @{ $self->_gitgot_github }
