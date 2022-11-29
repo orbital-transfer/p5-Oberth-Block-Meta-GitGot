@@ -2,6 +2,7 @@ use Orbital::Transfer::Common::Setup;
 package Orbital::Payload::Meta::GitGot::Repo;
 # ABSTRACT: GitGot repo
 
+use Orbital::Transfer::Common::Setup;
 use Mu;
 
 use MooX::HandlesVia;

@@ -2,10 +2,10 @@ use Orbital::Transfer::Common::Setup;
 package Orbital::Payload::Meta::GitGot::RepoFinder;
 # ABSTRACT: RepoFinder strategy that uses GitGot
 
+use Orbital::Transfer::Common::Setup;
 use Mu;
 use Orbital::Payload::Meta::GitGot;
 use Orbital::Payload::Serv::GitHub::Repo;
-use Try::Tiny;
 
 has gitgot => (
 	is => 'ro',

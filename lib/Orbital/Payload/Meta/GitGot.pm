@@ -2,11 +2,10 @@ use Orbital::Transfer::Common::Setup;
 package Orbital::Payload::Meta::GitGot;
 # ABSTRACT: Process data from App::GitGot
 
+use Orbital::Transfer::Common::Setup;
 use Mu;
 
 use YAML::XS;
-use Path::Tiny;
-use Try::Tiny;
 
 use Orbital::Payload::Meta::GitGot::Repo;
 
