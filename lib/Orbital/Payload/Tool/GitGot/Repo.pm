@@ -1,5 +1,5 @@
 use Orbital::Transfer::Common::Setup;
-package Orbital::Payload::Meta::GitGot::Repo;
+package Orbital::Payload::Tool::GitGot::Repo;
 # ABSTRACT: GitGot repo
 
 use Orbital::Transfer::Common::Setup;

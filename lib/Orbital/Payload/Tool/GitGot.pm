@@ -1,5 +1,5 @@
 use Orbital::Transfer::Common::Setup;
-package Orbital::Payload::Meta::GitGot;
+package Orbital::Payload::Tool::GitGot;
 # ABSTRACT: Process data from App::GitGot
 
 use Orbital::Transfer::Common::Setup;
@@ -7,7 +7,7 @@ use Mu;
 
 use YAML::XS;
 
-use Orbital::Payload::Meta::GitGot::Repo;
+use Orbital::Payload::Tool::GitGot::Repo;
 
 has gitgot_config_path => (
 	is => 'ro',
@@ -22,7 +22,7 @@ lazy _gitgot => method() {
 lazy data => method() {
 	my @data;
 	for my $repo ( @{ $self->_gitgot } ) {
-		push @data, Orbital::Payload::Meta::GitGot::Repo->new( data => $repo );
+		push @data, Orbital::Payload::Tool::GitGot::Repo->new( data => $repo );
 	};
 
 	\@data;
