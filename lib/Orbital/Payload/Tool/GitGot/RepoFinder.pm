@@ -1,16 +1,16 @@
 use Orbital::Transfer::Common::Setup;
-package Orbital::Payload::Meta::GitGot::RepoFinder;
+package Orbital::Payload::Tool::GitGot::RepoFinder;
 # ABSTRACT: RepoFinder strategy that uses GitGot
 
 use Orbital::Transfer::Common::Setup;
 use Mu;
-use Orbital::Payload::Meta::GitGot;
+use Orbital::Payload::Tool::GitGot;
 use Orbital::Payload::Serv::GitHub::Repo;
 
 has gitgot => (
 	is => 'ro',
 	default => method() {
-		my $gitgot = Orbital::Payload::Meta::GitGot->new;
+		my $gitgot = Orbital::Payload::Tool::GitGot->new;
 	},
 );
 
