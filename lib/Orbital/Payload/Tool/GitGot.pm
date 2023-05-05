@@ -5,7 +5,7 @@ package Orbital::Payload::Tool::GitGot;
 use Orbital::Transfer::Common::Setup;
 use Mu;
 
-use YAML::XS;
+use YAML;
 
 use Orbital::Payload::Tool::GitGot::Repo;
 
@@ -15,8 +15,7 @@ has gitgot_config_path => (
 );
 
 lazy _gitgot => method() {
-	local $YAML::XS::Boolean = "boolean";
-	my $gitgot = YAML::XS::LoadFile( $self->gitgot_config_path );
+	my $gitgot = YAML::LoadFile( $self->gitgot_config_path );
 };
 
 lazy data => method() {
