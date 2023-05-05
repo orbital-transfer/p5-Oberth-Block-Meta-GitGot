@@ -32,7 +32,7 @@ subtest "Parse test file" => sub {
 	my $config_path = Path::Tiny->tempfile;
 	$config_path->spew_utf8( $test_data );
 
-	my $got = Orbital::Payload::Tool::GitGot->new( gitgot_config_path => $config_path );
+	my $got = Orbital::Payload::Tool::GitGot->new( config_path => $config_path );
 	is $got->data, bag {
 		prop size => 4;
 		etc();

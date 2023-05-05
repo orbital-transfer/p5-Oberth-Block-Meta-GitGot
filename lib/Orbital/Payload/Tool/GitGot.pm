@@ -9,13 +9,13 @@ use YAML;
 
 use Orbital::Payload::Tool::GitGot::Repo;
 
-has gitgot_config_path => (
+has config_path => (
 	is => 'ro',
 	default => sub { path('~/.gitgot') },
 );
 
 lazy _gitgot => method() {
-	my $gitgot = YAML::LoadFile( $self->gitgot_config_path );
+	my $gitgot = YAML::LoadFile( $self->config_path );
 };
 
 lazy data => method() {
