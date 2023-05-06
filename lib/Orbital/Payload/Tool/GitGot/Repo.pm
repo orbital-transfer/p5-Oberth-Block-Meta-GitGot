@@ -2,9 +2,7 @@ use Orbital::Transfer::Common::Setup;
 package Orbital::Payload::Tool::GitGot::Repo;
 # ABSTRACT: GitGot repo
 
-use Orbital::Transfer::Common::Setup;
 use Mu;
-
 use Sub::HandlesVia;
 
 has data => (
@@ -12,15 +10,15 @@ has data => (
 	required => 1,
 	handles_via => 'Hash',
 	handles => {
-		repo_url  => [ 'get', 'repo' ],
-		repo_path => [ 'get', 'path' ],
-		repo_name => [ 'get', 'name' ],
-		repo_type => [ 'get', 'type' ],
+		url  => [ 'get', 'repo' ],
+		path => [ 'get', 'path' ],
+		name => [ 'get', 'name' ],
+		type => [ 'get', 'type' ],
 	},
 );
 
-lazy repo_tags => method() {
-	[ split ' ', $self->data->{tags} // '' ];
+lazy tags => method() {
+	[ split ' ', ($self->data->{tags} // '') ];
 };
 
 

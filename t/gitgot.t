@@ -33,7 +33,7 @@ subtest "Parse test file" => sub {
 	$config_path->spew_utf8( $test_data );
 
 	my $got = Orbital::Payload::Tool::GitGot->new( config_path => $config_path );
-	is $got->data, bag {
+	is $got->repos, bag {
 		prop size => 4;
 		etc();
 	};

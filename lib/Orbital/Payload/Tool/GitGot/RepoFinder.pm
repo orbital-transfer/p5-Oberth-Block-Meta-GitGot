@@ -2,7 +2,6 @@ use Orbital::Transfer::Common::Setup;
 package Orbital::Payload::Tool::GitGot::RepoFinder;
 # ABSTRACT: RepoFinder strategy that uses GitGot
 
-use Orbital::Transfer::Common::Setup;
 use Mu;
 use Orbital::Payload::Tool::GitGot;
 use Orbital::Payload::Serv::GitHub::Repo;
@@ -17,17 +16,17 @@ has gitgot => (
 lazy _gitgot_github => method() {
 	my @gitgot_github = map {
 		try_tt {
-			die unless defined $_->repo_url;
+			die unless defined $_->url;
 			+{
 				gitgot => $_,
 				github_repo => Orbital::Payload::Serv::GitHub::Repo->new(
-					uri => $_->repo_url,
+					uri => $_->url,
 				),
 			}
 		} catch_tt {
 			();
 		};
-	} @{ $self->gitgot->data };
+	} @{ $self->gitgot->repos };
 
 	\@gitgot_github;
 };
@@ -37,7 +36,7 @@ lazy _git_scp_to_path => method() {
 		map {
 			try_tt {
 				$_->{github_repo}->git_scp_uri
-					=> $_->{gitgot}->repo_path
+					=> $_->{gitgot}->path
 			} catch_tt {
 				()
 			};
