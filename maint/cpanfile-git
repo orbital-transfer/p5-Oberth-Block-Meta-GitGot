@@ -1,0 +1,13 @@
+requires 'Orbital::Transfer',
+	git => 'https://github.com/orbital-transfer/p5-Orbital-Transfer.git',
+	branch => 'master';
+
+# GitGot only supports Git for now.
+requires 'Orbital::Payload::VCS::Git',
+	git => 'https://github.com/orbital-transfer/p5-Orbital-Payload-VCS-Git.git',
+	branch => 'master';
+
+# TODO remove this later
+requires 'Orbital::Payload::Serv::GitHub',
+	git => 'https://github.com/orbital-transfer/p5-Orbital-Payload-Serv-GitHub.git',
+	branch => 'master';
